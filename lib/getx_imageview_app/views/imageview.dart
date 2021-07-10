@@ -1,7 +1,7 @@
 
 
-import 'package:api_demo2/Views/imagecontainer.dart';
-import 'package:api_demo2/controller/imagecontroller.dart';
+import 'package:api_demo2/getx_imageview_app/views/imagecontainer.dart';
+import 'package:api_demo2/getx_imageview_app/controller/imagecontroller.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
@@ -11,7 +11,9 @@ import 'package:get/get_core/src/get_main.dart';
 
 
 class ImageView extends StatelessWidget {
-  final ImageController imageController = Get.put(ImageController());
+
+
+  final ImageController imageController = Get.put(ImageController(),tag: 'images');
   //double iconSize = 20;
 
   @override
@@ -87,7 +89,7 @@ class ImageView extends StatelessWidget {
                   crossAxisSpacing: 16,
                   mainAxisSpacing: 16,
                   itemBuilder: (context, index) {
-                    return ImageContainer(imageController.imageList[index]);
+                    return ImageContainer(imageController.imageList[index], index);
                   },
                   staggeredTileBuilder: (index) => StaggeredTile.fit(1),
                 );

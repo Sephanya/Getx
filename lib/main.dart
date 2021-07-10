@@ -1,4 +1,4 @@
-import 'package:api_demo2/Views/imageview.dart';
+import 'package:api_demo2/getx_imageview_app/views/imageview.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'dart:async';

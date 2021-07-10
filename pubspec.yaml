@@ -28,6 +28,7 @@ dependencies:
   get: ^4.1.4
   dio: ^4.0.0
   connectivity: ^3.0.6
+  get_it: ^7.1.3
 
 
 

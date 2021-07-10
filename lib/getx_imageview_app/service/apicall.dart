@@ -1,8 +1,8 @@
 import 'dart:convert';
 import 'dart:io';
 
-import 'package:api_demo2/httpexception.dart';
-import 'package:api_demo2/model/image.dart';
+import 'package:api_demo2/getx_imageview_app/exception/httpexception.dart';
+import 'package:api_demo2/getx_imageview_app/modelclass/image.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/cupertino.dart';
 
@@ -42,6 +42,13 @@ class DioServices {
     catch (e) {
       throw e;
     }
+  }
+  Future<dynamic> postAPI() async {
+    final _dioInstance = Dio(_options);
+    final response = await _dioInstance.request(
+      '/api',
+      options: Options(method: 'POST'),
+    );
   }
 }
 // on SocketException catch (e) {
